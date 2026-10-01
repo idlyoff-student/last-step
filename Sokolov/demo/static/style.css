@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f3;
+    color: #20201e
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: auto
+}
+
+header {
+    background: #171715;
+    color: white
+}
+
+.head {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    font-size: 14px
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.button {
+    display: inline-block;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: #20201e;
+    color: white;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.light {
+    background: white;
+    color: #111
+}
+
+main {
+    padding: 38px 0 70px
+}
+
+.hero,
+.panel,
+.card,
+.auth {
+    background: white;
+    border-radius: 16px
+}
+
+.hero {
+    padding: 50px;
+    margin-bottom: 20px
+}
+
+.hero h1,
+h1 {
+    margin-top: 6px
+}
+
+.hero p {
+    color: #666
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #777
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px
+}
+
+.card {
+    padding: 24px
+}
+
+.card span,
+small {
+    display: block;
+    color: #777;
+    margin-top: 7px
+}
+
+.card strong {
+    font-size: 30px
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px
+}
+
+.pagehead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px
+}
+
+.panel {
+    padding: 25px;
+    margin: 20px 0
+}
+
+.form,
+.panel label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px
+}
+
+.form {
+    gap: 16px
+}
+
+input,
+select {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    font: inherit
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee
+}
+
+.qty {
+    width: 80px
+}
+
+.danger {
+    border: 0;
+    background: none;
+    color: #a22;
+    cursor: pointer
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eee
+}
+
+.auth {
+    width: min(440px, 100%);
+    margin: 60px auto;
+    padding: 35px
+}
+
+.under {
+    display: block;
+    margin-top: 20px;
+    text-decoration: underline
+}
+
+.auth small {
+    margin-top: 20px;
+    color: #888
+}
+
+.question {
+    padding: 15px;
+    background: #eee;
+    border-radius: 10px
+}
+
+.flash {
+    padding: 13px;
+    margin-bottom: 15px;
+    border-radius: 9px
+}
+
+.flash.error {
+    background: #ffebee
+}
+
+.flash.success {
+    background: #e8f5e9
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px
+}
+
+.display {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+    padding: 35px
+}
+
+.display-head {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.display-head h1 {
+    font-size: clamp(32px, 4vw, 60px)
+}
+
+#clock {
+    font-size: 35px;
+    font-weight: bold
+}
+
+.display-grid {
+    max-width: 1400px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px
+}
+
+.display-card {
+    min-height: 190px;
+    padding: 28px;
+    border-radius: 20px;
+    background: #292927;
+    border: 3px solid #777;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.display-card.cooking {
+    border-color: #d6a000
+}
+
+.display-card.ready {
+    border-color: #43a047
+}
+
+.num {
+    font-size: 28px;
+    font-weight: bold
+}
+
+.name {
+    font-size: 27px;
+    font-weight: bold
+}
+
+.status {
+    font-size: 20px;
+    color: #aaa
+}
+
+.ready .status {
+    color: #6bd66f
+}
+
+.cooking .status {
+    color: #ffd24a
+}
+
+.empty {
+    font-size: 35px;
+    color: #aaa;
+    text-align: center;
+    grid-column: 1/-1
+}
+
+@media(max-width:800px) {
+    nav a:not(.button) {
+        display: none
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .columns,
+    .actions {
+        grid-template-columns: 1fr
+    }
+
+    .head {
+        padding: 12px 0
+    }
+}

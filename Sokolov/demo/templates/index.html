@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}<section class="hero">
+    <p class="eyebrow">ПАНЕЛЬ УПРАВЛЕНИЯ</p>
+    <h1>Система учёта заказов</h1>
+    <p>Управление меню и заказами кофейни.</p><a class="button" href="/orders/new">Создать заказ</a>
+</section>
+<div class="stats">{% for title,value in [("Товаров в меню",stats[0]),("Всего заказов",stats[1]),("Активных
+    заказов",stats[2]),("Заказов сегодня",stats[3])] %}<div class="card">
+        <span>{{title}}</span><strong>{{value}}</strong></div>{% endfor %}</div>
+<div class="actions"><a class="card" href="/menu"><strong>Меню</strong><span>Управление товарами</span></a><a
+        class="card" href="/orders"><strong>Заказы</strong><span>История и статусы</span></a><a class="card"
+        href="/display"><strong>Экран</strong><span>Экран для посетителей</span></a></div>{% endblock %}

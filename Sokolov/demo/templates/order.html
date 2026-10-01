@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}<h1>Заказ #{{order.id}}</h1>
+<section class="panel">
+    <p>Клиент: <b>{{order.customer_name}}</b></p>{% for i in items %}<div class="row"><span>{{i.name}} ×
+            {{i.quantity}}</span><b>{{"%.2f"|format(i.price*i.quantity)}} ₽</b></div>{% endfor %}<div class="total">
+        Итого: {{"%.2f"|format(order.total)}} ₽</div>
+    <p>Статус: <b>{{order.status}}</b></p>
+</section>{% endblock %}

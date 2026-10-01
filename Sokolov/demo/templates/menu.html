@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block content %}<div class="pagehead">
+    <h1>Меню</h1><a class="button" href="/orders/new">Создать заказ</a>
+</div>
+<div class="columns">
+    <section class="panel">
+        <h2>Добавить товар</h2>
+        <form method="post" action="/menu/add" class="form"><label>Название<input name="name"
+                    required></label><label>Категория<input name="category" required></label><label>Цена<input
+                    name="price" type="number" min="0" step=".01" required></label><button
+                class="button">Добавить</button></form>
+    </section>
+    <section class="panel">
+        <h2>Товары</h2>{% for p in products %}<div class="row">
+            <div><b>{{p.name}}</b><small>{{p.category}}</small></div>
+            <div><b>{{"%.2f"|format(p.price)}} ₽</b>
+                <form method="post" action="/menu/delete/{{p.id}}" style="display:inline"><button
+                        class="danger">Удалить</button></form>
+            </div>
+        </div>{% endfor %}
+    </section>
+</div>{% endblock %}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Заказы</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="display">
+    <div class="display-head">
+        <div>
+            <div class="eyebrow">COFFEE SHOP</div>
+            <h1>Готовность заказов</h1>
+        </div>
+        <div id="clock"></div>
+    </div>
+    <div class="display-grid">{% for o in orders %}<div
+            class="display-card {{'ready' if o.status=='Готов' else 'cooking' if o.status=='Готовится' else 'new'}}">
+            <div class="num">№{{o.id}}</div>
+            <div class="name">{{o.customer_name}}</div>
+            <div class="status">{{o.status}}</div>
+        </div>{% else %}<div class="empty">Заказов пока нет</div>{% endfor %}</div>
+    <script>function clock() { document.getElementById("clock").textContent = new Date().toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" }) } clock(); setInterval(clock, 1000)</script>
+</body>
+
+</html>

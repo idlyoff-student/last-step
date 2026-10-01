@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block content %}<h1>Новый заказ</h1>
+<form method="post">
+    <section class="panel"><label>Имя клиента<input name="customer_name" placeholder="Гость"></label></section>
+    <section class="panel">
+        <h2>Товары</h2>{% for p in products %}<div class="row">
+            <div><b>{{p.name}}</b><small>{{p.category}} · {{p.price}} ₽</small></div><input class="qty" type="number"
+                min="0" value="0" name="quantity_{{p.id}}">
+        </div>{% endfor %}<button class="button">Создать заказ</button>
+    </section>
+</form>{% endblock %}

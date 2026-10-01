@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Вход{% endblock %}{% block content %}<div class="auth">
+    <p class="eyebrow">COFFEE SHOP</p>
+    <h1>Вход в систему</h1>
+    <form method="post" class="form"><label>Логин<input name="username" required></label><label>Пароль<input
+                name="password" type="password" required></label><button class="button">Войти</button></form><a
+        href="/forgot-password" class="under">Забыли пароль?</a><small></small>
+</div>{% endblock %}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}Кофейня{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container head"><a class="logo" href="{{ url_for('index') }}">COFFEE SHOP</a>{% if
+            session.get("user_id") %}<nav><a href="/">Главная</a><a href="/menu">Меню</a><a href="/orders">Заказы</a><a
+                    href="/display">Экран</a><a class="button light" href="/orders/new">+ Новый заказ</a><a
+                    href="/logout">Выйти</a></nav>{% endif %}</div>
+    </header>
+    <main class="container">{% with messages=get_flashed_messages(with_categories=true) %}{% for c,m in messages %}<div
+            class="flash {{c}}">{{m}}</div>{% endfor %}{% endwith %}{% block content %}{% endblock %}</main>
+</body>
+
+</html>
